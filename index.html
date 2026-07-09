@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Te amo mocosa ❤️</title>
+<style>
+html,body{margin:0;padding:0;overflow:hidden;background:#02030b;color:white;font-family:Georgia,serif;height:100%}
+#bg{position:fixed;inset:0;background-image:url('https://i.pinimg.com/736x/ea/04/c8/ea04c8d02368046a9a0b10d31f08b5e4.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;}
+.star{position:absolute;width:2px;height:2px;background:white;border-radius:50%;animation:twinkle 2s infinite alternate}
+@keyframes twinkle{from{opacity:.2}to{opacity:1}}
+#moon{position:absolute;top:60px;right:60px;width:120px;height:120px;border-radius:50%;background:rgba(247,242,211,0.75);box-shadow:0 0 40px rgba(255,255,255,0.4);}
+.screen{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:25px;text-align:center}
+#start{z-index:2}
+#storyScreen{display:none;z-index:1}
+button{padding:18px 40px;font-size:24px;border:none;border-radius:999px;background:#ff4f8b;color:#fff;cursor:pointer;transition:.15s}
+button:active{transform:scale(.92)}
+#story{display:none;max-width:min(760px,90vw);width:min(760px,90vw);font-size:clamp(16px,2.2vw,22px);line-height:1.7;white-space:pre-wrap;overflow-y:auto;max-height:80vh;padding:20px 24px;background:rgba(2,3,11,0.6);border-radius:20px;backdrop-filter:blur(6px);box-shadow:0 0 25px rgba(255,255,255,0.12)}
+#end{display:none;text-align:center;max-width:min(760px,90vw);width:min(760px,90vw);padding:20px 24px;background:rgba(2,3,11,0.6);border-radius:20px;backdrop-filter:blur(6px);box-shadow:0 0 25px rgba(255,255,255,0.12)}
+#end img{width:min(320px,70vw);max-width:80vw;border-radius:18px;box-shadow:0 0 30px #fff4}
+.heart{position:fixed;font-size:22px;pointer-events:none;animation:float 1s forwards}
+@keyframes float{to{transform:translateY(-100px) scale(1.7);opacity:0}}
+</style>
+</head>
+<body>
+<div id="bg"><div id="moon"></div></div>
+
+<div class="screen" id="start">
+<h1>✨Con mucho amor para mi personita especial ✨</h1>
+<p>Hay algo muy bonito esperándote</p>
+<button id="go">❤️ Presiona ❤️</button>
+</div>
+
+<div class="screen" id="storyScreen">
+<div id="story"></div>
+<div id="nextBox">
+    <p>💌 Si llegaste hasta el final</p>
+    <button id="nextBtn">❤️ Presióname ❤️</button>
+</div>
+<div id="end">
+<img src="https://i.pinimg.com/736x/30/ac/68/30ac68c8d3951075c693293942f4e0b7.jpg" alt="Momento de amor">
+<h2>Siempre tu presencia ❤️</h2>
+<p>Eres una parte hermosa de todo lo que siento.</p>
+</div>
+</div>
+
+<script>
+const bg=document.getElementById("bg");
+const start=document.getElementById("start");
+const storyScreen=document.getElementById("storyScreen");
+const story=document.getElementById("story");
+const end=document.getElementById("end");
+const go=document.getElementById("go");
+
+for(let i=0;i<220;i++){
+ let s=document.createElement("div");
+ s.className="star";
+ s.style.left=Math.random()*100+"%";
+ s.style.top=Math.random()*100+"%";
+ s.style.opacity=Math.random();
+ bg.appendChild(s);
+}
+document.addEventListener("pointerdown",e=>{
+ for(let i=0;i<10;i++){
+   let h=document.createElement("div");
+   h.className="heart";
+   h.innerHTML="❤";
+   h.style.left=(e.clientX+(Math.random()*30-15))+"px";
+   h.style.top=(e.clientY+(Math.random()*30-15))+"px";
+   document.body.appendChild(h);
+   setTimeout(()=>h.remove(),1000);
+ }
+})
+const text=`Mi amor
+
+No sé si existan las palabras perfectas para describir todo lo que siento por ti, pero quiero que sepas que cada día a tu lado ha sido un regalo que jamás cambiaría por nada.
+Nuestra historia lleva mucho tiempo escribiéndose, y al mirar atrás me doy cuenta de que cada momento contigo ha sido único. Desde las risas más simples hasta los días difíciles, todo ha formado parte de los recuerdos más bonitos de mi vida. Gracias por permanecer a mi lado y por enseñarme que el amor también se construye con paciencia, confianza y pequeños detalles.
+Sé que no siempre he hecho las cosas bien. Hubo momentos en los que te lastimé, y créeme que nunca fue mi intención hacerte daño. Lo lamento de todo corazón. Si pudiera borrar esos momentos lo haría, porque lo único que deseo es verte feliz. Espero que con el tiempo mis acciones puedan demostrarte cuanto te amo y valoro la oportunidad de seguir caminando contigo.
+Quiero convertirme en un mejor chico para ti, alguien que te haga sentir segura, escuchada y amada todos los días. Prometo seguir aprendiendo de mis errores, crecer como persona y esforzarme para darte la mejor versión de mí. No porque me lo pidas, sino porque tú mereces recibir todo el amor, el respeto y el cariño que tengo para ofrecer.
+Sueño con seguir creando miles de recuerdos juntos, conocer nuevos lugares, celebrar cada logro, superar cada obstáculo de la mano y compartir una vida llena de momentos que algún día recordemos con una sonrisa. Quiero que nuestro futuro esté lleno de aventuras, abrazos, conversaciones interminables y mucho amor.
+Gracias por existir, por llegar a mi vida y por hacerla mucho más bonita. Gracias por cada abrazo, por cada palabra de apoyo y por cada instante que hemos compartido. Eres una persona muy especial para mí, y cada día me enamoro un poco más de quien eres.
+Te prometo que nunca dejaré de luchar por nosotros. Haré todo lo posible por hacerte feliz, por cuidarte, respetarte y demostrarte con hechos cuánto significas para mí. Quiero darte todo mi amor, hoy, mañana y en cada uno de los días que la vida nos permita compartir.
+Te amo con todo mi corazón, y espero seguir escribiendo esta hermosa historia contigo por mucho, mucho tiempo más.Te amo mocosa ❤️
+❤️`;
+
+go.addEventListener("click",()=>{
+ start.style.display="none";
+ storyScreen.style.display="flex";
+ story.style.display="block";
+ story.innerHTML="";
+ let i=0;
+ let timer=setInterval(()=>{
+   if(text[i]=="\n") story.innerHTML+="<br>";
+   else story.innerHTML+=text[i];
+   i++;
+   if(i>=text.length){
+   clearInterval(timer);
+
+   setTimeout(()=>{
+      nextBox.style.display="block";
+   },1200);
+}
+ },40);
+});
+nextBtn.addEventListener("click",()=>{
+
+    nextBox.style.display="none";
+
+    story.style.display="none";
+
+    end.style.display="block";
+
+});
+</script>
+</body>
+</html>
